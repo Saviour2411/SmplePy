@@ -10,7 +10,9 @@ g_image_path            = "D:\\proj\\image"
 # debug标记, 减少日志打印
 g_debug_leave = {
     "leave_0":True,   # 默认打印日志
-    "leave_1":False,  # dump dev addr日志
+    "leave_1":True,   # TCP服务器内部日志
+
+    # 业务自定义日志
     "leave_2":False,  # dump task node日志
     "leave_3":True,   # 定时器日志
     "leave_4":True,   # 接收udp 22345
