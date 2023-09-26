@@ -7,6 +7,7 @@ from CommonMod.PublicFunc import *
 from CommonMod.SysVar import *
 from CommonMod.TimerPoll import *
 from CommonMod.ThreadPool import *
+from CommonMod.TcpSvr import *
 
 
 @CapError
@@ -23,9 +24,12 @@ def main(argv):
     initThreadPool()
     addThreadTask(test, wloop=True)
     addThreadTask(doTimerTaskStart, wloop=True)
-    loopThreatWait()
     
+    # tcp svr
+    tsvr = TcpSvr()
+    addThreadTask(tsvr.doTcpSvrStart, wloop=True)
 
+    loopThreatWait()
 
 if __name__ == "__main__":
     sys.exit(main(sys.argv))
